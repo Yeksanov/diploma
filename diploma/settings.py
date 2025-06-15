@@ -19,7 +19,7 @@ SECRET_KEY = '697f8cd97250cebeb67934beefc10b39'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['diploma-1-fhne.onrender.com', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'crispy_bootstrap4',
