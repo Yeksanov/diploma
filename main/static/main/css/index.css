@@ -1,10 +1,9 @@
 body {
-  color: #333;
-  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  background-color: #e8f8fb;
   min-height: 100vh;
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  padding-top: 60px;
+  padding-top: 20px;
 }
 
 /* Навбар – ақ фон, көлеңке, гамбургер */
@@ -65,12 +64,11 @@ body {
   }
 }
 
-/* Контент */
 .content-wrapper {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .card {
@@ -115,3 +113,14 @@ body {
 .page-content {
   margin-top: 80px;
 }
+input::placeholder {
+    color: #6c757d;
+    opacity: 1;
+  }
+.form-label {
+    font-weight: 500;
+  }
+
+  input.form-control {
+    margin-bottom: 1rem;
+  }
