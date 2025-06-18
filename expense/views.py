@@ -8,6 +8,8 @@ from datetime import datetime
 from django.db.models import Sum
 from user import models
 from user import forms
+import json
+
 @login_required(login_url='/login/')
 def expenses(request):
     if request.method == 'POST':
@@ -148,19 +150,19 @@ def diagrams(request):
     chart_labels = []
     chart_income = []
     chart_expenses = []
+
     for date, data in date_data.items():
         chart_labels.append(date)
         chart_income.append(data['income'])
         chart_expenses.append(data['expenses'])
 
     context = {
-        'chart_labels': chart_labels,
-        'chart_income': chart_income,
-        'chart_expenses': chart_expenses
+        'chart_labels': json.dumps(chart_labels),
+        'chart_income': json.dumps(chart_income),
+        'chart_expenses': json.dumps(chart_expenses)
     }
 
     return render(request, 'expense/diagrams.html', context)
-
 
 @login_required(login_url='/login/')
 def goals(request):

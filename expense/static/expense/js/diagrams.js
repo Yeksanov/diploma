@@ -1,39 +1,45 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const canvas = document.getElementById('myChart');
+    const chartEl = document.getElementById('myChart');
 
-    const labels = JSON.parse(canvas.dataset.labels);
-    const dataIncome = JSON.parse(canvas.dataset.income);
-    const dataExpenses = JSON.parse(canvas.dataset.expenses);
+    try {
+        console.log("Dataset Labels:", chartEl.dataset.labels);
+        console.log("Dataset Income:", chartEl.dataset.income);
+        console.log("Dataset Expenses:", chartEl.dataset.expenses);
 
-    const ctx = canvas.getContext('2d');
+        const labels = JSON.parse(chartEl.dataset.labels);
+        const dataIncome = JSON.parse(chartEl.dataset.income);
+        const dataExpenses = JSON.parse(chartEl.dataset.expenses);
 
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [
-                {
-                    label: 'Income',
-                    data: dataIncome,
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
-                },
-                {
-                    label: 'Expenses',
-                    data: dataExpenses,
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 1
-                }
-            ]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
+        const ctx = chartEl.getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Income',
+                        data: dataIncome,
+                        backgroundColor: 'rgba(54, 162, 235, 0.3)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 2,
+                        borderRadius: 6,
+                    },
+                    {
+                        label: 'Expenses',
+                        data: dataExpenses,
+                        backgroundColor: 'rgba(255, 99, 132, 0.3)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 2,
+                        borderRadius: 6,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
             }
-        }
-    });
+        });
+    } catch (err) {
+        console.error(" Chart error:", err);
+    }
 });

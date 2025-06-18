@@ -4,22 +4,30 @@ body {
   font-family: Arial, sans-serif;
   font-weight: bold;
   color: #333;
-  background-image: url("https://sun9-9.userapi.com/impg/VrMYlL9OlQ_lysxWuP7WEgDHzcqb2grtdA2q-w/1UWbHLrbElI.jpg?size=2560x1463&quality=95&sign=121752bf96c84baef08a1b4ce94ec01f&type=album");
-  background-size: cover;
-  background-position: center center;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+  background-color: #f8f9fa;
   margin: 0;
-  padding: 0;
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+
+}
+main {
+  flex: 1;
 }
 
 .diagram-page {
-  padding: 100px 20px 60px;
+  padding: 100px 20px 20px;
   background: linear-gradient(to bottom right, #f8f9fa, #e3f2fd);
   min-height: 100vh;
 }
 
+
 canvas {
-  max-width: 100%;
-  height: auto;
+  width: 100% !important;
+  height: 400px !important;
 }
 
 .container.mt-5 {
@@ -52,7 +60,6 @@ canvas {
   padding: 30px;
   max-width: 1000px;
   margin: 0 auto;
-  height: 500px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
 }
 
@@ -70,7 +77,7 @@ canvas {
   }
 
   .diagram-page {
-    padding: 80px 10px 40px;
+    padding: 80px 0px 0px;
   }
 
   .section-title {
@@ -78,11 +85,16 @@ canvas {
   }
 
   .chart-container {
-    padding: 15px;
     height: auto;
     box-shadow: none;
     border-radius: 10px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 1rem;
+    box-sizing: border-box;
   }
+
 
   canvas {
     width: 100% !important;
