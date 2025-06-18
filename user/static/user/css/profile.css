@@ -112,3 +112,14 @@ input.form-control {
   background-color: #0069d9;
   border-color: #0062cc;
 }
+@media (max-width: 768px) {
+  .profile-wrapper {
+    margin-top: 140px; /* хедердің биіктігіне байланысты */
+    padding: 0 15px;
+  }
+
+  .profile-card {
+    margin-top: 0;
+  }
+}
+
