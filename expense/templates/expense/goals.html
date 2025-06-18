@@ -8,15 +8,15 @@
 {% block content %}
 
 <div class="goal-container">
-  <h2>Создать новую цель</h2>
+  <h2>Create new goal</h2>
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Создать</button>
+    <button type="submit">Create</button>
   </form>
 </div>
 
-<h3 style="text-align:center; margin-top: 40px;">Мои цели</h3>
+<h3 style="text-align:center; margin-top: 40px;">My goals</h3>
 <div class="goal-list">
   {% for goal in savings_goals %}
     <div class="goal-card">
@@ -34,11 +34,11 @@
       <form method="post" style="display:inline;">
         {% csrf_token %}
         <input type="hidden" name="delete_goal" value="{{ goal.id }}">
-        <button type="submit" class="goal-delete-btn">Удалить</button>
+        <button type="submit" class="goal-delete-btn">Delete</button>
       </form>
     </div>
   {% empty %}
-    <p>Нет целей.</p>
+    <p>You don't have a goal at the moment.</p>
   {% endfor %}
 </div>
 
