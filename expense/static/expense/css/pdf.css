@@ -1,110 +1,116 @@
 body {
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  color: #333;
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  background-color: #a0b1cb; /* Астындағы көк түске ұқсас */
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(to bottom right, #e9f1f7, #d6e4f0);
   min-height: 100vh;
+  color: #333;
 }
 
-.container {
+.pdf-summary-container {
   max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.expense-container {
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  margin-top: 40px;
-}
-
-.expense-title {
+  margin: auto;
+  padding: 40px 20px;
   text-align: center;
-  font-size: 28px;
-  color: #222;
-  margin-bottom: 20px;
 }
 
-.expense-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
+.pdf-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #123456;
 }
 
-.expense-table th,
-.expense-table td {
-  border: 1px solid #ddd;
-  padding: 12px;
-  text-align: left;
-}
-
-.expense-table th {
-  background-color: #f1f1f1;
-}
-
-.expense-total {
-  font-size: 18px;
-  margin-top: 20px;
-}
-
-.expense-footer {
-  margin-top: 30px;
+.pdf-form {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
+  gap: 15px;
   justify-content: center;
+  margin-bottom: 30px;
 }
 
-.btn {
-  display: inline-block;
-  padding: 10px 25px;
-  font-size: 16px;
+.pdf-form input[type="date"] {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.btn-filter {
+  background-color: #007bff;
   color: white;
-  background-color: #cfd6df;
+  padding: 8px 20px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 
-.btn:hover {
-  background-color: #004bbf;
+.btn-filter:hover {
+  background-color: #0056b3;
 }
 
-/* Мобильная адаптация */
+.pdf-table-container {
+  overflow-x: auto;
+  margin-bottom: 30px;
+}
+
+.pdf-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.pdf-table th, .pdf-table td {
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.pdf-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.pdf-summary-box {
+  background-color: #f7f9fc;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.pdf-button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn-secondary {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .navbar-collapse {
-    background-color: #ffffff;
-    padding: 1rem;
-  }
-  .container {
-    padding: 15px;
-  }
-
-  .expense-title {
-    font-size: 22px;
-  }
-
-  .expense-table th,
-  .expense-table td {
-    font-size: 0.9rem;
-    padding: 8px;
-  }
-
-  .expense-footer {
+  .pdf-form {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
   }
 
-  .btn {
-    width: 100%;
+  .pdf-button-group {
+    flex-direction: column;
+    gap: 10px;
   }
 }
-

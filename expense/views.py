@@ -122,19 +122,24 @@ def financial_statistics(request):
     total_income = sum(expense.income for expense in expenses)
     total_expenses = sum(expense.expenses for expense in expenses)
     remaining_finance = total_income - total_expenses
+
     if total_income > 0:
-        remaining_percentage = (remaining_finance / total_income) * 100
+        income_percentage = (total_income / (total_income + total_expenses)) * 100
+        expenses_percentage = (total_expenses / (total_income + total_expenses)) * 100
     else:
-        remaining_percentage = 0
+        income_percentage = 0
+        expenses_percentage = 0
 
     context = {
         'total_income': total_income,
         'total_expenses': total_expenses,
         'remaining_finance': remaining_finance,
-        'remaining_percentage': remaining_percentage,
+        'income_percentage': income_percentage,
+        'expenses_percentage': expenses_percentage,
     }
 
     return render(request, 'expense/financial_statistics.html', context)
+
 
 
 def diagrams(request):

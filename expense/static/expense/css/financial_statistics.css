@@ -1,13 +1,117 @@
 body {
-            height:100vh;
-            font-family: Arial, sans-serif;
-            font-weight: bold;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            background-size:cover;
-            background-position:center center;
-            height: 800vh;
-            box-sizing: border-box;
-            background-image: url("https://sun9-79.userapi.com/impg/TSYrDVgNnR-uAKclYkA4fA4_S3RoJ89XBkLFfw/b9R7rRLenbQ.jpg?size=2560x2559&quality=95&sign=e3eede50e869218578dfece523660e91&type=album");
-        }
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-size: cover;
+  color: #333;
+}
+
+.statistics-page {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.title {
+  font-size: 36px;
+  color: #0f2233;
+  margin-bottom: 40px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card .amount {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.progress-bar {
+  height: 28px;
+  line-height: 28px;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.green {
+  background-color: #28a745;
+}
+
+.red {
+  background-color: #dc3545;
+}
+
+.blue {
+  background-color: #007bff;
+}
+
+.btn-group {
+  margin-top: 40px;
+}
+
+.btn {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.progress-outer {
+  background-color: #e9ecef;
+  border-radius: 10px;
+  height: 24px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.progress-inner {
+  height: 100%;
+  width: 0%;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  line-height: 24px;
+  border-radius: 10px;
+  transition: width 1s ease;
+}
+
+.green {
+  background-color: #28a745;
+}
+
+.red {
+  background-color: #dc3545;
+}
+
+.blue {
+  background-color: #007bff;
+}

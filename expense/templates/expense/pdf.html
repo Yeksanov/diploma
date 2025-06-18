@@ -1,53 +1,60 @@
 {% extends 'main/auth_base.html' %}
 {% load static %}
+
 {% block css %}
 <link rel="stylesheet" href="{% static 'expense/css/pdf.css' %}">
 {% endblock %}
+
 {% block content %}
+<div class="pdf-summary-container">
+  <h2 class="pdf-title">Your Financial Summary</h2>
 
-<div class="container mt-5">
-    <h2 class="text-center mb-4">Your Financial Summary</h2>
+  <form method="GET" action="" class="pdf-form">
+    <div>
+      <label for="start_date">Start Date:</label>
+      <input type="date" id="start_date" name="start_date" value="{{ start_date }}">
+    </div>
+    <div>
+      <label for="end_date">End Date:</label>
+      <input type="date" id="end_date" name="end_date" value="{{ end_date }}">
+    </div>
+    <button type="submit" class="btn-filter">Apply Filter</button>
+  </form>
 
-    <form method="GET" action="">
-        <label for="start_date">Start Date:</label>
-        <input type="date" id="start_date" name="start_date" value="{{ start_date }}">
-
-        <label for="end_date">End Date:</label>
-        <input type="date" id="end_date" name="end_date" value="{{ end_date }}">
-
-        <button type="submit" class="btn btn-primary">Apply Filter</button>
-    </form>
-
-    <hr>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Expense Reason</th>
-                <th>Income</th>
-                <th>Expenses</th>
-                <th>Total</th>
-                <th>Date</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for expense in expenses %}
-            <tr>
-                <td>{{ expense.name }}</td>
-                <td>{{ expense.income }}</td>
-                <td>{{ expense.expenses }}</td>
-                <td>{{ expense.total }}</td>
-                <td>{{ expense.date }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
+  <div class="pdf-table-container">
+    <table class="pdf-table">
+      <thead>
+        <tr>
+          <th>Expense Reason</th>
+          <th>Income</th>
+          <th>Expenses</th>
+          <th>Total</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for expense in expenses %}
+        <tr>
+          <td>{{ expense.name }}</td>
+          <td>{{ expense.income }}</td>
+          <td>{{ expense.expenses }}</td>
+          <td>{{ expense.total }}</td>
+          <td>{{ expense.date }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
     </table>
+  </div>
 
-    <p>Total Income: {{ total_sum }}</p>
-    <p>Total Expenses: {{ total_expenses }}</p>
-    <p>Remaining Finance: {{ remaining_finance }}</p>
+  <div class="pdf-summary-box">
+    <p><strong>Total Income:</strong> {{ total_sum }}</p>
+    <p><strong>Total Expenses:</strong> {{ total_expenses }}</p>
+    <p><strong>Remaining Finance:</strong> {{ remaining_finance }}</p>
+  </div>
 
-     <a class="btn btn-secondary"> Financial Statistics</a>
-    <a href="{% url 'expenses' %}" class="btn btn-secondary">Back</a>
+  <div class="pdf-button-group">
+    <a class="btn-secondary" href="{% url 'financial_statistics' %}">Financial Statistics</a>
+    <a href="{% url 'expenses' %}" class="btn-secondary">Back</a>
+  </div>
 </div>
 {% endblock %}
