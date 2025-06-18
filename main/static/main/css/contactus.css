@@ -15,8 +15,7 @@ textarea:focus {
 }
 
 .bg-image {
-  background-image: url("https://sun9-33.userapi.com/impg/3H3kV17eXqtt5IFsQS6FMdaQp7lwQjqX5R63Jg/edCW6vxKRD4.jpg?size=2560x1493&quality=95&sign=38928bc0aeb9e2abd9f10de599c9c2c3&type=album");
-  background-size: cover;
+   background-size: cover;
   background-position: center center;
   height: 100vh;
   position: fixed;
